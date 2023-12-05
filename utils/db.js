@@ -20,7 +20,8 @@ class DBClient {
         try {
             return this.client.isConnected();
         } catch (error) {
-            return console.error('Error checking database connection:', error);
+            console.error('Error checking database connection:', error);
+            return false;
         }
     }
 
@@ -30,10 +31,22 @@ class DBClient {
             const count = await user.countDocuments();
             return count;
         } catch (error) {
-            return console.error('Error counting users:', error);
+            console.error('Error counting users:', error);
+            return -1;
 
         }
     }
+
+    async nbFiles() {
+        const files = this.db.collection('files');
+        const numfiles = await files.countDocuments();
+        return numfiles;
+    } catch(error) {
+        console.error('Error counting files:', error);
+        return -1;
+    }
+
+
     
     const dbClient = new DBClient();
     module.exports = dbClient;
