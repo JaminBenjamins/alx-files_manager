@@ -35,6 +35,6 @@ class DBClient {
         }
     }
     
-    const DbClient = new DBClient();
-    module.exports = DbClient;
+    const dbClient = new DBClient();
+    module.exports = dbClient;
 }
