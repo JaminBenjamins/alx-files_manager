@@ -53,7 +53,7 @@ class UsersController {
   static async getMe(req: Request, res: Response) {
     try {
       // Extract token from X-Token header
-      const token = req.headers['x-token'];
+      const token = req.headers['X-token'];
 
       // If no token is provided, return Unauthorized
       if (!token) {

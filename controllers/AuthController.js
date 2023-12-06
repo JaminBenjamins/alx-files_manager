@@ -38,3 +38,5 @@ class AuthController {
         return response.status(204).send();
     }
 }
+
+module.exports = AuthController;
