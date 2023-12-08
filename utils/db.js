@@ -13,7 +13,7 @@ class DBClient {
             this.db = this.client.db(`${database}`);
         }).catch((err) => {
         console.log(err);
-        })
+        });
     }
 
     isAlive() {
@@ -45,9 +45,8 @@ class DBClient {
         console.error('Error counting files:', error);
         return -1;
     }
-
+}
 
     
     const dbClient = new DBClient();
     module.exports = dbClient;
-}
